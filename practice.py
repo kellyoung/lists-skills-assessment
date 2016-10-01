@@ -159,7 +159,9 @@ def word_lengths(words):
         [5, 3, 5, 4]
     """
 
-    return []
+    if type(words) is list:
+        word_lengths_list = [len(word) for word in words]
+        return word_lengths_list
 
 
 def sum_numbers(numbers):
@@ -179,7 +181,13 @@ def sum_numbers(numbers):
         0
     """
 
-    return None
+    if type(numbers) is list:
+        sum_of_nums = 0
+
+        for number in numbers:
+            sum_of_nums += number
+
+        return sum_of_nums
 
 
 def mult_numbers(numbers):
