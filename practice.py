@@ -46,8 +46,6 @@ def long_words(words):
     if type(words) is list:
         long_words_list = [word for word in words if len(word) > 4]
         return long_words_list
-    else:
-        return ['the wrong thing']
 
 
 def n_long_words(words, n):
@@ -210,7 +208,13 @@ def mult_numbers(numbers):
         1
     """
 
-    return None
+    if type(numbers) is list:
+        prod_of_nums = 1
+
+        for number in numbers:
+            prod_of_nums *= number
+
+        return prod_of_nums
 
 
 def join_strings(words):
@@ -230,7 +234,13 @@ def join_strings(words):
         ''
     """
 
-    return "Not the right thing"
+    if type(words) is list:
+        joined_string = ''
+
+        for word in words:
+            joined_string += word
+
+        return joined_string
 
 
 def average(numbers):
