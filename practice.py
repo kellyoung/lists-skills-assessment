@@ -21,6 +21,7 @@ def print_list(items):
     if type(items) is list:
         for item in items:
             print item
+
     else:
         print "the wrong thing"
 
@@ -67,6 +68,7 @@ def n_long_words(words, n):
     if type(words) is list:
         n_long_words_list = [word for word in words if len(word) > n]
         return n_long_words_list
+
     else:
         return ['the wrong thing']
 
@@ -90,7 +92,17 @@ def smallest_int(numbers):
         True
     """
 
-    return 100
+    if len(numbers) > 0:
+        #set smallest_integer to a viable answer
+        smallest_integer = numbers[0]
+        for number in numbers:
+            if number < smallest_integer:
+                smallest_integer = number
+
+        return smallest_integer
+
+    else:
+        return None
 
 
 def largest_int(numbers):
