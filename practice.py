@@ -17,6 +17,7 @@ def print_list(items):
         3
         9
     """
+
     if type(items) is list:
         for item in items:
             print item
@@ -40,6 +41,7 @@ def long_words(words):
         >>> long_words(["all", "are", "tiny"])
         []
     """
+
     if type(words) is list:
         long_words_list = [word for word in words if len(word) > 4]
         return long_words_list
@@ -62,7 +64,11 @@ def n_long_words(words, n):
         ['apples', 'bananas']
     """
 
-    return ['the wrong thing']
+    if type(words) is list:
+        n_long_words_list = [word for word in words if len(word) > n]
+        return n_long_words_list
+    else:
+        return ['the wrong thing']
 
 
 def smallest_int(numbers):
