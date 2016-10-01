@@ -101,9 +101,6 @@ def smallest_int(numbers):
 
         return smallest_integer
 
-    else:
-        return None
-
 
 def largest_int(numbers):
     """Find the largest integer in a list of integers and return it.
@@ -123,8 +120,14 @@ def largest_int(numbers):
         >>> largest_int([]) is None
         True
     """
+    if len(numbers) > 0:
+        #set largest_integer to a viable answer
+        largest_integer = numbers[0]
+        for number in numbers:
+            if number > largest_integer:
+                largest_integer = number
 
-    return 0
+        return largest_integer
 
 
 def halvesies(numbers):
@@ -141,8 +144,10 @@ def halvesies(numbers):
         >>> halvesies([1, 5])
         [0.5, 2.5]
     """
+    if type(numbers) is list:
+        halvesies_list = [number/2.0 for number in numbers]
 
-    return []
+        return halvesies_list
 
 
 def word_lengths(words):
