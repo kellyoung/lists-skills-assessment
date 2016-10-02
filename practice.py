@@ -439,7 +439,7 @@ def find_letter_indices(words, letter):
 
     for word in words:
         letter_index = 0
-       
+        
         while letter_index < len(word):
             if word[letter_index] == letter:
                 index_of_letter_list.append(letter_index)
