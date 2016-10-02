@@ -263,7 +263,17 @@ def average(numbers):
     a feel free to provide a good solution here.)
     """
 
-    return 0
+    if type(numbers) is list and len(numbers) > 0:
+        #find sum of numbers first
+        sum_numbers = 0
+
+        for number in numbers:
+            sum_numbers += number
+
+        #average by dividing by items in numbers
+        average_of_numbers = float(sum_numbers)/len(numbers)
+
+        return average_of_numbers
 
 
 def join_strings_with_comma(words):
@@ -283,7 +293,16 @@ def join_strings_with_comma(words):
         'Pretzel'
     """
 
-    return ""
+    if type(words) is list and len(words) > 0:
+        joined_with_comma = words[0]
+
+        for index in range(1, len(words)):
+            if type(words[index]) is not str:
+                str(words[index])
+
+            joined_with_comma += ", " + words[index]
+
+        return joined_with_comma
 
 
 def reverse_list(items):
@@ -309,7 +328,10 @@ def reverse_list(items):
         ['apple', 'berry', 'cherry']
     """
 
-    return []
+    if type(items) is list:
+        reversed_list = [items[i] for i in range(len(items)-1, -1, -1)]
+
+        return reversed_list
 
 
 def reverse_list_in_place(items):
@@ -335,7 +357,11 @@ def reverse_list_in_place(items):
         ['I', 'love', 'cookies']
     """
 
-    return []
+    if type(items) is list:
+        for index in range(len(items)/2):
+            item_temp_storage = items[index]
+            items[index] = items[len(items) - index - 1]
+            items[len(items) - index - 1] = item_temp_storage
 
 
 def duplicates(items):
@@ -364,7 +390,22 @@ def duplicates(items):
         ['apple', 'apple', 'berry']
     """
 
-    return []
+    if type(items) is list:
+        duplicate_counts = {}
+        duplicate_list = []
+
+        for item in items:
+            if item not in duplicate_counts:
+                duplicate_counts[item] = 1
+            else:
+                duplicate_counts[item] += 1
+
+        for duplicate in duplicate_counts:
+            if duplicate_counts[duplicate] >= 2:
+                duplicate_list.append(duplicate)
+
+        duplicate_list.sort()
+        return duplicate_list
 
 
 def find_letter_indices(words, letter):
@@ -394,7 +435,21 @@ def find_letter_indices(words, letter):
     `None`.)
     """
 
-    return []
+    index_of_letter_list = []
+
+    for word in words:
+        letter_index = 0
+        
+        while letter_index < len(word):
+            if word[letter_index] == letter:
+                index_of_letter_list.append(letter_index)
+                break
+            letter_index += 1
+
+        if letter_index == len(word):
+            index_of_letter_list.append(None)
+    return index_of_letter_list
+
 
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.
